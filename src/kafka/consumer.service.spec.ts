@@ -12,7 +12,7 @@ describe('ConsumerService', () => {
     }).compile();
 
     service = module.get<ConsumerService>(ConsumerService);
-    consumer = service['kafka'].consumer({ groupId: 'workouts' }); // Доступ к приватному свойству kafka
+    consumer = service['kafka'].consumer({ groupId: 'workouts' });
   });
 
   it('should be defined', () => {
@@ -28,10 +28,10 @@ describe('ConsumerService', () => {
     const topic: ConsumerSubscribeTopics = { topics: ['workouts'] };
     const config: ConsumerRunConfig = { eachMessage: async () => {} };
 
-    await service.consume(topic, config); // Передаем topic в виде массива, так как метод consume принимает массив топиков
+    await service.consume(topic, config);
 
     expect(connectSpy).toHaveBeenCalled();
-    expect(subscribeSpy).toHaveBeenCalledWith({ topics: ['workouts'] }); // Исправляем передачу topic в subscribeSpy
+    expect(subscribeSpy).toHaveBeenCalledWith({ topics: ['workouts'] });
     expect(runSpy).toHaveBeenCalledWith(config);
   });
 

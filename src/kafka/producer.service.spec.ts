@@ -12,7 +12,7 @@ describe('ProducerService', () => {
     }).compile();
 
     service = module.get<ProducerService>(ProducerService);
-    producer = service['producer']; // Доступ к приватному свойству producer
+    producer = service['producer'];
   });
 
   it('should be defined', () => {

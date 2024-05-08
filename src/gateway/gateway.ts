@@ -15,8 +15,8 @@ import { ProducerService } from 'src/kafka/producer.service';
 
 @WebSocketGateway(3001, { cors: true })
 export class WebsocketGateway
-  implements OnGatewayInit, OnGatewayConnection, OnGatewayDisconnect {
-  
+  implements OnGatewayInit, OnGatewayConnection, OnGatewayDisconnect
+{
   private logger: Logger = new Logger('WebsocketGateway');
 
   constructor(private readonly producerService: ProducerService) {}

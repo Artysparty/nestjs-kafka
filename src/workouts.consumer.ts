@@ -9,11 +9,6 @@ export class WorkoutsConsumer implements OnModuleInit {
       { topics: ['workouts'] },
       {
         eachMessage: async ({ topic, partition, message }) => {
-          console.log({
-            value: message?.value?.toString(),
-            topic: topic?.toString(),
-            partition: partition?.toString(),
-          });
         },
       },
     );
